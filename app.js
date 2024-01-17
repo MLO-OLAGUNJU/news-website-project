@@ -68,4 +68,5 @@ searchButton.addEventListener("click", () => {
   fetchNews(query);
   currentSelectedNav?.classList.remove("active");
   currentSelectedNav = null;
+  searchText.value = "";
 });
