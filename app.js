@@ -5,6 +5,10 @@ window.addEventListener("load", () => {
   fetchNews("Nigeria");
 });
 
+const reload = () => {
+  window.location.reload();
+};
+
 async function fetchNews(query) {
   const res = await fetch(`${url} ${query}&apiKey=${API_KEY}`);
   const data = await res.json();
@@ -46,6 +50,23 @@ const fillDataInCard = (cardClone, article) => {
   });
 };
 
+let currentSelectedNav = null;
 const onNavItemClick = (id) => {
   fetchNews(id);
+  const navItem = document.getElementById(id);
+  currentSelectedNav?.classList.remove("active");
+  currentSelectedNav = navItem;
+  currentSelectedNav.classList.add("active");
 };
+
+const searchButton = document.getElementById("search-button");
+const searchText = document.getElementById("search-text");
+
+searchButton,
+  addEventListener("click", () => {
+    const query = searchText.value;
+    if (!query) return;
+    fetchNews(query);
+    currentSelectedNav?.classList.remove("active");
+    currentSelectedNav = null;
+  });

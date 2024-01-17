@@ -146,3 +146,9 @@ main {
 .new-source {
   margin-block: 12px;
 }
+
+.nav-item.active {
+  background-color: var(--accent-color-dark);
+  color: #fff;
+  padding: 15px;
+}
