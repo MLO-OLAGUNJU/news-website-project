@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
 });
 
 const reload = () => {
-  window.reload();
+  window.location.reload();
 };
 
 async function fetchNews(query) {
@@ -62,11 +62,10 @@ const onNavItemClick = (id) => {
 const searchButton = document.getElementById("search-button");
 const searchText = document.getElementById("search-text");
 
-searchButton,
-  addEventListener("click", () => {
-    const query = searchText.value;
-    if (!query) return;
-    fetchNews(query);
-    currentSelectedNav?.classList.remove("active");
-    currentSelectedNav = null;
-  });
+searchButton.addEventListener("click", () => {
+  const query = searchText.value;
+  if (!query) return;
+  fetchNews(query);
+  currentSelectedNav?.classList.remove("active");
+  currentSelectedNav = null;
+});
