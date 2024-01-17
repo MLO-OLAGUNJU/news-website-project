@@ -8,12 +8,12 @@
   </head>
   <body>
     <nav>
-      <div class="main-nav">
-        <a href="#">
+      <div class="main-nav container flex">
+        <a href="#" class="company-logo">
           <img src="./2-removebg-preview.png" alt="company-logo" />
         </a>
         <div class="nav-links">
-          <ul>
+          <ul class="flex nav-ul">
             <li class="hover-link nav-item">EPL</li>
             <li class="hover-link nav-item">Finance</li>
             <li class="hover-link nav-item">Politics</li>
@@ -21,12 +21,35 @@
         </div>
         <div class="search-bar">
           <input type="text" class="news-input" placeholder="e.g. Science" />
-          <button class="search button">Search</button>
+          <button class="search-button">Search</button>
         </div>
       </div>
     </nav>
 
-    <main></main>
+    <main>
+      <div class="cards-container container flex" id="cards-container"></div>
+    </main>
+
+    <template id="template-news-card">
+      <div class="card">
+        <div class="card-header">
+          <img
+            src="https://via.placeholder.com/400x200"
+            alt="news-image"
+            id="news-img"
+          />
+        </div>
+        <div class="card-content">
+          <h3 id="news-title">This is the Title</h3>
+          <h6 class="news-source" id="news-source">End Gadget 26/08/2023</h6>
+          <p class="news-desc" id="news-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
+            voluptatibus aliquam, saepe voluptates provident recusandae pariatur
+            dolorum veritatis laboriosam qui?
+          </p>
+        </div>
+      </div>
+    </template>
     <script src="./app.js"></script>
   </body>
 </html>
