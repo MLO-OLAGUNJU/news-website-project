@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
 });
 
 const reload = () => {
-  window.location.reload();
+  window.reload();
 };
 
 async function fetchNews(query) {
