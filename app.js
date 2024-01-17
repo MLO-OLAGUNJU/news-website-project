@@ -45,3 +45,7 @@ const fillDataInCard = (cardClone, article) => {
     window.open(article.url, "_blank");
   });
 };
+
+const onNavItemClick = (id) => {
+  fetchNews(id);
+};
